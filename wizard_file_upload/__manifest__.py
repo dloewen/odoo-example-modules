@@ -4,7 +4,7 @@
     "author": "Derek Loewen",
     "website": "https://myles.consulting",
     "category": "Customizations",
-    "license": "Other proprietary",
+    "license": "AGPL-3",
     "version": "0.1",
     "depends": ["base"],
     "auto_install": False,
