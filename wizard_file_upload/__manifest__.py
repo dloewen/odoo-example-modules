@@ -1,5 +1,5 @@
 {
-    "name": "Odoo Example - Wizard File Upload",
+    "name": "Odoo 16 Example - Wizard File Upload",
     "summary": "An example of how to upload a file using a wizard.",
     "author": "Derek Loewen",
     "website": "https://myles.consulting",
