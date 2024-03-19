@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates xml:space="preserve">
+    <t t-name="field_widgets.MyIncrementWidget" owl="1">
+        <div class="my-increment-widget">
+            <button
+                t-on-click="(ev) => this.addQuantity(-1, ev)"
+                t-attf-disabled="{{props.value - 1 &lt; 0}}"
+                class="btn btn-outline-primary py-0 px-1 mx-1"
+            >
+                <i class="fa fa-fw o_button_icon fa-minus"></i>
+            </button>
+            <t t-out="props.value"/>
+            <button
+                t-on-click="(ev) => this.addQuantity(1, ev)"
+                t-attf-disabled="{{props.value + 1 &gt; 10}}"
+                class="btn btn-outline-primary py-0 px-1 mx-1"
+            >
+                <i class="fa fa-fw o_button_icon fa-plus"></i>
+            </button>
+        </div>
+    </t>
+</templates>
