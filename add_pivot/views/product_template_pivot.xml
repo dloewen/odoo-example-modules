@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_template_pivot_view" model="ir.ui.view">
+        <field name="model">product.template</field>
+        <field name="name">Product Pivot</field>
+        <field name="type">pivot</field>
+        <field name="arch" type="xml">
+            <pivot string="Product" sample="1">
+                <!-- Fields here -->
+            </pivot>
+        </field>
+    </record>
+
+    <record id="sale.product_template_action" model="ir.actions.act_window">
+        <field name="view_mode">kanban,tree,form,pivot,activity</field>
+    </record>
+</odoo>
