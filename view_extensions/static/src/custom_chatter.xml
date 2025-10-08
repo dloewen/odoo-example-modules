@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-inherit="mail.Chatter" t-inherit-mode="extension">
+        <xpath expr="//button[hasclass('o-mail-Chatter-sendMessage')]" position="after">
+            <!-- Add a button after "Send message" in the chatter -->
+            <button class="o-mail-Chatter-myButton btn text-nowrap me-1 btn-secondary"
+                    t-att-class="{'my-2': !props.compactHeight}"
+                    t-att-disabled="!state.thread.hasWriteAccess and !(state.thread.hasReadAccess and state.thread.canPostOnReadonly) and props.threadId"
+                    t-on-click="() => window.alert('Always on the move.')">
+                Hello there
+            </button>
+        </xpath>
+    </t>
+</templates>

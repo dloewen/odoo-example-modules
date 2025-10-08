@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_order_form_inherit" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <!-- Adding a field -->
+            <field name="date_order" position="after">
+                <div>Some content</div>
+                <!-- <field name="my_field"/> -->
+            </field>
+
+            <!-- Changing a field label  -->
+            <field name="client_order_ref" position="attributes">
+                <attribute name="string">Customer PO</attribute>
+            </field>
+
+            <!-- Removing a field inside a specific group tag -->
+            <xpath expr="//group[@name='sales_person']//field[@name='tag_ids']" position="replace"/>
+
+            <!-- Adding a tab -->
+            <notebook position="inside">
+                <page string="My Tab" name="my_tab">
+                    <group>
+                        <group>
+                            <div>First column</div>
+                            <!-- <field name="my_field"/> -->
+                        </group>
+                        <group>
+                            <div>Second column</div>
+                        </group>
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+</odoo>

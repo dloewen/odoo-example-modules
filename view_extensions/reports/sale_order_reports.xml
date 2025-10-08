@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_saleorder_document" inherit_id="sale.report_saleorder_document">
+        <div id="informations" position="inside">
+            <div class="col" name="my_info">
+                <strong>My Info</strong>
+                <div>A field could go here</div>
+            </div>
+        </div>
+    </template>
+</odoo>
