@@ -12,6 +12,6 @@
     </record>
 
     <record id="sale.product_template_action" model="ir.actions.act_window">
-        <field name="view_mode">kanban,tree,form,pivot,activity</field>
+        <field name="view_mode">kanban,list,form,pivot,activity</field>
     </record>
 </odoo>

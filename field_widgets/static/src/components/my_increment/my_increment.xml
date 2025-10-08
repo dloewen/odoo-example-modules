@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <templates xml:space="preserve">
-    <t t-name="field_widgets.MyIncrementWidget" owl="1">
+    <t t-name="field_widgets.MyIncrementWidget">
         <div class="my-increment-widget">
             <button
                 t-on-click="(ev) => this.addQuantity(-1, ev)"

@@ -1,5 +1,3 @@
-/** @odoo-module */
-
 import { patch } from "@web/core/utils/patch";
 import { COLORS, getColor } from "@web/views/graph/colors";
 import { ActivityListPopoverItem } from "@mail/core/web/activity_list_popover_item";
@@ -25,13 +23,14 @@ patch(getColor, myGetColor);
 // ------------------------------------------------------------------------
 patch(GraphView.prototype, {
     setup() {
-        super(...arguments);
+        super.setup(...arguments);
         console.log("Hello!")
     }
 });
 
-// Patching a list of components inside an OWL component
+// Patching a list of components inside an OWL component (static property)
+// Here we add a float component to the existing components
 // ------------------------------------------------------------------------
-// The patch function doesn't support static properties inside a class,
-// so we have to use Object.assign instead.
-Object.assign(ActivityListPopoverItem.components, { FloatField });
+patch(ActivityListPopoverItem, {
+  components: {...ActivityListPopoverItem.components, FloatField}
+});

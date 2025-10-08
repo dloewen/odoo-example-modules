@@ -1,8 +1,5 @@
-/** @odoo-module **/
-
 import { registry } from '@web/core/registry';
-
-const { Component } = owl;
+import { Component } from "@odoo/owl";
 
 /**
  * Increment widget integer/float fields
@@ -11,6 +8,8 @@ const { Component } = owl;
  */
 
 export class MyIncrementWidget extends Component {
+    static template = "field_widgets.MyIncrementWidget";
+    static supportedTypes = ["integer", "float"];
     setup() {
         super.setup(...arguments);
     }
@@ -23,7 +22,4 @@ export class MyIncrementWidget extends Component {
     }
 }
 
-MyIncrementWidget.template = "field_widgets.MyIncrementWidget";
-MyIncrementWidget.supportedTypes = ["integer", "float"];
-
-registry.category('fields').add('my_increment', MyIncrementWidget);
+registry.category("fields").add("my_increment", MyIncrementWidget);
