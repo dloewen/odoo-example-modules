@@ -12,6 +12,6 @@ class TestWizardFileUpload(TransactionCase):
             .with_user(user)
             .create({"csv_file": base64.b64encode(b"name\nfoo\n"), "file_name": "items.csv"})
         )
-        with self.assertLogs("odoo.addons.wizard_file_upload.models.my_import_wizard") as logs:
+        with self.assertLogs("odoo.addons.wizard_file_upload.wizard.my_import_wizard") as logs:
             wizard.import_csv()
         self.assertIn("items.csv (9 bytes)", logs.output[0])

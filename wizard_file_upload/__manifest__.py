@@ -10,6 +10,6 @@
     "auto_install": False,
     "data": [
         "security/ir.model.access.csv",
-        "views/my_import_wizard.xml",
+        "wizard/my_import_wizard_views.xml",
     ],
 }
