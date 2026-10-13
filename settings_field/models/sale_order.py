@@ -1,6 +1,6 @@
-from odoo import fields, models, _
-
 from logging import getLogger
+
+from odoo import models
 
 logger = getLogger(__name__)
 
@@ -11,12 +11,12 @@ class SaleOrder(models.Model):
     def my_example_method(self):
         """Example of retrieving the settings"""
 
-        # Note that ir.config_parameter fields are saved as a string, so they must be converted to other types.
+        # ir.config_parameter values are saved as strings, so they must be converted to other types.
         my_notification_user_id = self.env["ir.config_parameter"].sudo().get_param("my_notification_user_id")
         if my_notification_user_id:
-            user_id = self.env["res.users"].search(["id", "=", int(my_notification_user_id)])
-            logger.info("my_notification_user_id: %s", user_id)
+            user = self.env["res.users"].browse(int(my_notification_user_id))
+            logger.info("my_notification_user_id: %s", user)
 
         # Company-related field
-        my_company_text = self.company_id.my_company_text
-        logger.info("my_company_text: %s", my_company_text)
+        for order in self:
+            logger.info("my_company_text: %s", order.company_id.my_company_text)

@@ -1,29 +1,32 @@
 /** @odoo-module **/
 
-import { registry } from '@web/core/registry';
-
-const { Component } = owl;
+import { Component } from "@odoo/owl";
+import { registry } from "@web/core/registry";
+import { standardFieldProps } from "@web/views/fields/standard_field_props";
 
 /**
- * Increment widget integer/float fields
+ * Increment widget for integer/float fields, limited to values between 0 and 10
  *
- * @extends Component
+ * Usage in a view: <field name="my_integer_field" widget="my_increment"/>
  */
-
 export class MyIncrementWidget extends Component {
-    setup() {
-        super.setup(...arguments);
+    static template = "field_widgets.MyIncrementWidget";
+    static props = { ...standardFieldProps };
+
+    get value() {
+        return this.props.record.data[this.props.name];
     }
 
     addQuantity(quantity, ev) {
         ev.preventDefault();
-        const originalQty = this.props.value;
-        let newQty = this.props.value + quantity;
-        this.props.update(newQty >= 0 ? newQty : originalQty);
+        const newQty = this.value + quantity;
+        if (newQty >= 0 && newQty <= 10) {
+            this.props.record.update({ [this.props.name]: newQty });
+        }
     }
 }
 
-MyIncrementWidget.template = "field_widgets.MyIncrementWidget";
-MyIncrementWidget.supportedTypes = ["integer", "float"];
-
-registry.category('fields').add('my_increment', MyIncrementWidget);
+registry.category("fields").add("my_increment", {
+    component: MyIncrementWidget,
+    supportedTypes: ["integer", "float"],
+});

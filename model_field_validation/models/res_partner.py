@@ -1,9 +1,5 @@
-from odoo import api, models, _
+from odoo import _, api, models
 from odoo.exceptions import ValidationError
-
-from logging import getLogger
-
-logger = getLogger(__name__)
 
 
 class ResPartner(models.Model):
@@ -11,5 +7,6 @@ class ResPartner(models.Model):
 
     @api.constrains("vat")
     def _my_check_tax_id(self):
-        if self.vat and "something" not in self.vat:
-            raise ValidationError(_("The tax ID is invalid."))
+        for partner in self:
+            if partner.vat and "something" not in partner.vat:
+                raise ValidationError(_("The tax ID is invalid."))

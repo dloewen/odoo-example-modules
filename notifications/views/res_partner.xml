@@ -5,9 +5,11 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
-            <header position="inside">
-                <button name="test_notification" type="object" string="Test Notification"/>
-            </header>
+            <sheet position="before">
+                <header>
+                    <button name="action_test_notification" type="object" string="Test Notification"/>
+                </header>
+            </sheet>
         </field>
     </record>
 </odoo>
