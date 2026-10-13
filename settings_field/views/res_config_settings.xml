@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
-      <record id="res_config_settings_view_form" model="ir.ui.view">
+    <record id="res_config_settings_view_form" model="ir.ui.view">
         <field name="name">res.config.settings.view.form.inherit</field>
         <field name="model">res.config.settings</field>
         <field name="priority" eval="90"/>
-        <field name="inherit_id" ref="sale.res_config_settings_view_form" />
-            <field name="arch" type="xml">
-                <xpath expr="//block[@name='quotation_order_setting_container']" position="after">
-                    <block title="My Settings Section" name="my_settings_section">
-                        <setting id="my_notification_user" company_dependent="1"
-                                 help="This user will be notified.">
-                            <field name="my_notification_user_id" string="Notified User"/>
-                        </setting>
-                    </block>
-                </xpath>
-            </field>
-        </record>
-    </data>
+        <field name="inherit_id" ref="sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@name='quotation_order_setting_container']" position="after">
+                <block title="My Settings Section" name="my_settings_section">
+                    <setting id="my_notification_user" help="This user will be notified.">
+                        <field name="my_notification_user_id" string="Notified User"/>
+                    </setting>
+                    <setting id="my_company_text" company_dependent="1" help="Saved on the current company.">
+                        <field name="my_company_text"/>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
 </odoo>

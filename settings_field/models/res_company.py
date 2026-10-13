@@ -1,8 +1,4 @@
-from odoo import fields, models, _
-
-from logging import getLogger
-
-logger = getLogger(__name__)
+from odoo import fields, models
 
 
 class ResCompany(models.Model):

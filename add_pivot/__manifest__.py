@@ -8,7 +8,5 @@
     "version": "18.0.1.0.0",
     "depends": ["sale"],
     "auto_install": False,
-    "data": [
-        "views/product_template_pivot.xml"
-    ],
+    "data": ["views/product_template_pivot.xml"],
 }

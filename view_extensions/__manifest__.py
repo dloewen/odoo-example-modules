@@ -20,7 +20,7 @@ QWeb Reports
 ------------
 Used for PDF reports, for example, sale order printouts.
 
-Documentation: https://www.odoo.com/documentation/18.0/th/developer/reference/backend/reports.html
+Documentation: https://www.odoo.com/documentation/18.0/developer/reference/backend/reports.html
     """,
     "author": "Derek Loewen",
     "website": "https://myles.consulting",

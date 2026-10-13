@@ -6,7 +6,7 @@
     "category": "Customizations",
     "license": "AGPL-3",
     "version": "18.0.1.0.0",
-    "depends": ["base", "web"],
+    "depends": ["bus"],
     "auto_install": False,
     "data": [
         "views/res_partner.xml",

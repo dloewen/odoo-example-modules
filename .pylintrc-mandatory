@@ -1,0 +1,46 @@
+[MASTER]
+load-plugins=pylint_odoo
+score=n
+
+[ODOOLINT]
+license-allowed=AGPL-3,GPL-2,GPL-2 or any later version,GPL-3,GPL-3 or any later version,LGPL-3,Other proprietary
+valid-odoo-versions=18.0
+
+[MESSAGES CONTROL]
+disable=all
+
+# Enable essential Odoo checks for proprietary development
+enable=anomalous-backslash-in-string,
+    assignment-from-none,
+    dangerous-default-value,
+    duplicate-key,
+    eval-used,
+    pointless-statement,
+    pointless-string-statement,
+    redundant-keyword-arg,
+    reimported,
+    return-in-init,
+    too-few-format-args,
+    unreachable,
+    # Critical Odoo-specific checks
+    manifest-required-key,
+    license-allowed,
+    manifest-version-format,
+    method-compute,
+    method-search,
+    method-inverse,
+    invalid-commit,
+    sql-injection,
+    external-request-timeout,
+    test-folder-imported,
+    deprecated-name-get,
+    odoo-exception-warning,
+    translation-field,
+    attribute-deprecated,
+    method-required-super,
+    missing-return
+
+[REPORTS]
+msg-template={path}:{line}: [{msg_id}({symbol}), {obj}] {msg}
+output-format=colorized
+reports=no

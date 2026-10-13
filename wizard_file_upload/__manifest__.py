@@ -9,6 +9,7 @@
     "depends": ["base"],
     "auto_install": False,
     "data": [
+        "security/ir.model.access.csv",
         "views/my_import_wizard.xml",
     ],
 }
