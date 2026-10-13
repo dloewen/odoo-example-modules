@@ -1,11 +1,11 @@
 {
-    "name": "Odoo 19 Example - Patching JavaScript",
+    "name": "Odoo 20 Example - Patching JavaScript",
     "summary": "An example of various patching methods in JS.",
     "author": "Derek Loewen",
     "website": "https://myles.consulting",
     "category": "Customizations",
     "license": "AGPL-3",
-    "version": "19.0.1.0.0",
+    "version": "20.0.1.0.0",
     "depends": ["web", "mail"],
     "auto_install": False,
     "assets": {

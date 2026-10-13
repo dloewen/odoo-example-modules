@@ -1,0 +1,2 @@
+id,name,model_id,group_id/id,operation,domain
+access_my_import_wizard,my.import.wizard,my.import.wizard,base.group_user,crud,

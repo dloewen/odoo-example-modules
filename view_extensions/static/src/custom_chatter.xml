@@ -3,9 +3,8 @@
     <t t-inherit="mail.Chatter" t-inherit-mode="extension">
         <xpath expr="//button[hasclass('o-mail-Chatter-sendMessage')]" position="after">
             <!-- Add a button after "Send message" in the chatter -->
-            <button class="o-mail-Chatter-myButton btn text-nowrap me-1 btn-secondary"
-                    t-att-class="{'my-2': !props.compactHeight}"
-                    t-att-disabled="!state.thread.canPostMessage and props.threadId"
+            <button class="o-mail-Chatter-myButton btn text-nowrap btn-secondary"
+                    t-att-disabled="!this.state.thread.canPostMessage and this.thread().id"
                     t-on-click="() => this.env.services.notification.add('Always on the move.')">
                 Hello there
             </button>

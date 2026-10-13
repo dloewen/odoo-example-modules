@@ -1,6 +1,5 @@
-import base64
-
 from odoo.tests import TransactionCase, new_test_user, tagged
+from odoo.tools import BinaryBytes
 
 
 @tagged("post_install", "-at_install")
@@ -10,7 +9,7 @@ class TestWizardFileUpload(TransactionCase):
         wizard = (
             self.env["my.import.wizard"]
             .with_user(user)
-            .create({"csv_file": base64.b64encode(b"name\nfoo\n"), "file_name": "items.csv"})
+            .create({"csv_file": BinaryBytes(b"name\nfoo\n"), "file_name": "items.csv"})
         )
         with self.assertLogs("odoo.addons.wizard_file_upload.wizard.my_import_wizard") as logs:
             wizard.import_csv()

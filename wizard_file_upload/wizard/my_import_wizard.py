@@ -1,4 +1,3 @@
-import base64
 from logging import getLogger
 
 from odoo import fields, models
@@ -28,6 +27,6 @@ class MyImportWizard(models.TransientModel):
     def import_csv(self):
         """Handle file import"""
         self.ensure_one()
-        file_content = base64.b64decode(self.csv_file)
+        file_content = self.csv_file.content
         # Do processing of the file contents here
         logger.info("Importing %s (%d bytes)", self.file_name, len(file_content))
