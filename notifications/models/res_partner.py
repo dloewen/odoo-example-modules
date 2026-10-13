@@ -1,4 +1,4 @@
-from odoo import _, models
+from odoo import models
 
 
 class ResPartner(models.Model):
@@ -9,7 +9,7 @@ class ResPartner(models.Model):
             "simple_notification",
             {
                 "type": "danger",
-                "title": _("Warning"),
-                "message": _("Watch out!"),
+                "title": self.env._("Warning"),
+                "message": self.env._("Watch out!"),
             },
         )

@@ -1,11 +1,11 @@
 {
-    "name": "Odoo 18 Example - Field Widgets",
+    "name": "Odoo 19 Example - Field Widgets",
     "summary": "Examples of a custom field widgets using the OWL framework",
     "author": "Derek Loewen",
     "website": "https://myles.consulting",
     "category": "Customizations",
     "license": "AGPL-3",
-    "version": "18.0.1.0.0",
+    "version": "19.0.1.0.0",
     "depends": ["web"],
     "auto_install": False,
     "assets": {
